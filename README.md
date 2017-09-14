@@ -2,7 +2,7 @@
 - 1、composer require "xdm/elastic"
 - 2、调用方法：
 ```
-use Xdm\Elastic;
+use Xdm\Elastic\Elastic;
 
 //construct set host
 $elastic = new Elastic($host);

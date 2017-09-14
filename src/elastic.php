@@ -1,6 +1,6 @@
 <?php
 
-namespace Xdm;
+namespace Xdm\Elastic;
 
 use Elasticsearch\ClientBuilder;
 use ONGR\ElasticsearchDSL\Search;
