@@ -17,7 +17,7 @@ $elastic->type($type);
 $elastic->where(['key' => 'value']);
 
 //add whereIn conditon filter
-$elastic->whereIn('key', ['value']);
+$elastic->whereIn('key', ['value1', 'value2']);
 
 //add range condition filter
 $elastic->range('key', ['gte' => 'value1', 'lte' => 'value2']);
