@@ -1,5 +1,5 @@
 ## 使用方法
-- 1、composer require "Xdm/elastic"
+- 1、composer require "xdm/elastic"
 - 2、调用方法：
 ```
 use Xdm\Elastic;
