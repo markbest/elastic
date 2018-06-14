@@ -206,8 +206,24 @@ class Elastic{
         }
         $this->searchParams['body'] = $this->search->toArray();
 
-        //提交查询
+        //查询
+        $result = [
+            'total' => 0,
+            'source' => [],
+            'aggregations' => []
+        ];
+
         $response = $this->client->search($this->searchParams);
-        return $response;
+        if(isset($response['hits']['total'])){
+            $result['total'] = $response['hits']['total'];
+        }
+        if(isset($response['hits']['hits']) && !empty($response['hits']['hits'])){
+            $collection = collect($response['hits']['hits']);
+            $result['source'] = $collection->pluck('_source')->all();
+        }
+        if(isset($response['aggregations']) && !empty($response['aggregations'])){
+            $result['aggregations'] = $response['aggregations'];
+        }
+        return $result;
     }
 }
